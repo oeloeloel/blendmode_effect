@@ -29,7 +29,7 @@ def tick args
     x = args.inputs.mouse.x
     y = args.inputs.mouse.y
 
-    # add to the render target, don't let it clear
+    # don't let the render target clear
     args.outputs[:effect].clear_before_render = false
 
     # draw the foreground sprite into the effect
@@ -63,6 +63,6 @@ def tick args
     }
   end
 
-  # output the leaf and the splatter
+  # output the render target 
   args.outputs.sprites << [args.grid.rect, :effect]
 end
